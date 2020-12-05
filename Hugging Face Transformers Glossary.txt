@@ -1,31 +1,24 @@
-<div class=""section"" id=""glossary"">
-<h1>Glossary<a class=""headerlink"" href=""#glossary"" title=""Permalink to this headline"">¶</a></h1>
-<div class=""section"" id=""general-terms"">
-<h2>General terms<a class=""headerlink"" href=""#general-terms"" title=""Permalink to this headline"">¶</a></h2>
-<ul class=""simple"">
-<li><p>autoencoding models: see MLM</p></li>
-<li><p>autoregressive models: see CLM</p></li>
-<li><p>CLM: causal language modeling, a pretraining task where the model reads the texts in order and has to predict the
+autoencoding models|"see MLM"
+autoregressive models|"see CLM"
+CLM|"causal language modeling, a pretraining task where the model reads the texts in order and has to predict the
 next word. It’s usually done by reading the whole sentence but using a mask inside the model to hide the future
-tokens at a certain timestep.</p></li>
-<li><p>MLM: masked language modeling, a pretraining task where the model sees a corrupted version of the texts, usually done
-by masking some tokens randomly, and has to predict the original text.</p></li>
-<li><p>multimodal: a task that combines texts with another kind of inputs (for instance images).</p></li>
-<li><p>NLG: natural language generation, all tasks related to generating text ( for instance talk with transformers,
-translation)</p></li>
-<li><p>NLP: natural language processing, a generic way to say “deal with texts”.</p></li>
-<li><p>NLU: natural language understanding, all tasks related to understanding what is in a text (for instance classifying
-the whole text, individual words)</p></li>
-<li><p>pretrained model: a model that has been pretrained on some data (for instance all of Wikipedia). Pretraining methods
+tokens at a certain timestep."
+MLM|"masked language modeling, a pretraining task where the model sees a corrupted version of the texts, usually done
+by masking some tokens randomly, and has to predict the original text."
+multimodal|"a task that combines texts with another kind of inputs (for instance images)."
+NLG|"natural language generation, all tasks related to generating text ( for instance talk with transformers,
+translation)"
+NLP|"natural language processing, a generic way to say “deal with texts”."
+NLU|"natural language understanding, all tasks related to understanding what is in a text (for instance classifying
+the whole text, individual words)"
+pretrained model|"a model that has been pretrained on some data (for instance all of Wikipedia). Pretraining methods
 involve a self-supervised objective, which can be reading the text and trying to predict the next word (see CLM) or
-masking some words and trying to predict them (see MLM).</p></li>
-<li><p>RNN: recurrent neural network, a type of model that uses a loop over a layer to process texts.</p></li>
-<li><p>seq2seq or sequence-to-sequence: models that generate a new sequence from an input, like translation models, or
-summarization models (such as <a class=""reference internal"" href=""model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""model_doc/t5.html""><span class=""doc"">T5</span></a>).</p></li>
-<li><p>token: a part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
-or a punctuation symbol.</p></li>
-</ul>
-</div>
+masking some words and trying to predict them (see MLM)."
+RNN|"recurrent neural network, a type of model that uses a loop over a layer to process texts."
+seq2seq or sequence-to-sequence|"models that generate a new sequence from an input, like translation models, or
+summarization models (such as <a class=""reference internal"" href=""model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""model_doc/t5.html""><span class=""doc"">T5</span></a>)."
+token|"a part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
+or a punctuation symbol."
 <div class=""section"" id=""model-inputs"">
 <h2>Model inputs<a class=""headerlink"" href=""#model-inputs"" title=""Permalink to this headline"">¶</a></h2>
 <p>Every model is different yet bears similarities with the others. Therefore most models use the same inputs, which are
@@ -217,6 +210,5 @@ individually and concat them afterward to <code class=""docutils literal notrans
 <p>For models employing the function <a class=""reference internal"" href=""internal/modeling_utils.html#transformers.apply_chunking_to_forward"" title=""transformers.apply_chunking_to_forward""><code class=""xref py py-func docutils literal notranslate""><span class=""pre"">apply_chunking_to_forward()</span></code></a>, the <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> defines the
 number of output embeddings that are computed in parallel and thus defines the trade-off between memory and time
 complexity. If <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> is set to 0, no feed forward chunking is done.</p>
-</div>
 </div>
 </div>
