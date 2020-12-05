@@ -16,13 +16,13 @@ involve a self-supervised objective, which can be reading the text and trying to
 masking some words and trying to predict them (see MLM)."
 RNN|"Recurrent neural network, a type of model that uses a loop over a layer to process texts."
 seq2seq or sequence-to-sequence|"Models that generate a new sequence from an input, like translation models, or
-summarization models (such as <a class=""reference internal"" href=""model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""model_doc/t5.html""><span class=""doc"">T5</span></a>)."
+summarization models (such as <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/t5.html""><span class=""doc"">T5</span></a>)."
 Token|"A part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
 or a punctuation symbol."
-Model inputs<a class=""headerlink"" href=""#model-inputs"" title=""Permalink to this headline"">¶</a>|"
+Model inputs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#model-inputs"" title=""Permalink to this headline"">¶</a>|"
 <p>Every model is different yet bears similarities with the others. Therefore most models use the same inputs, which are
 detailed here alongside usage examples."
-Input IDs<a class=""headerlink"" href=""#input-ids"" title=""Permalink to this headline"">¶</a>|"
+Input IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#input-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>The input ids are often the only required parameters to be passed to the model as input. <em>They are token indices,
 numerical representations of tokens building the sequences that will be used as input by the model</em>.</p>
 <p>Each tokenizer works differently but the underlying mechanism remains the same. Here’s an example using the BERT
@@ -67,9 +67,9 @@ IDs the model sometimes uses.</p>
 <span class=""go"">[CLS] A Titan RTX has 24GB of VRAM [SEP]</span>
 </pre></div>
 </div>
-<p>because this is the way a <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a> is going to expect its inputs.</p>
+<p>because this is the way a <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a> is going to expect its inputs.</p>
 "
-Attention mask<a class=""headerlink"" href=""#attention-mask"" title=""Permalink to this headline"">¶</a>|"
+Attention mask<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#attention-mask"" title=""Permalink to this headline"">¶</a>|"
 <p>The attention mask is an optional argument used when batching sequences together. This argument indicates to the model
 which tokens should be attended to, and which should not.</p>
 <p>For example, consider these two sequences:</p>
@@ -101,7 +101,7 @@ it to pad like this:</p>
 </pre></div>
 </div>
 <p>This can then be converted into a tensor in PyTorch or TensorFlow. The attention mask is a binary tensor indicating the
-position of the padded indices so that the model does not attend to them. For the <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertTokenizer"" title=""transformers.BertTokenizer""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertTokenizer</span></code></a>,
+position of the padded indices so that the model does not attend to them. For the <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertTokenizer"" title=""transformers.BertTokenizer""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertTokenizer</span></code></a>,
 <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">1</span></code> indicates a value that should be attended to, while <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">0</span></code> indicates a padded value. This attention mask is
 in the dictionary returned by the tokenizer under the key “attention_mask”:</p>
 <div class=""highlight-default notranslate""><div class=""highlight""><pre><span></span><span class=""gp"">&gt;&gt;&gt; </span><span class=""n"">padded_sequences</span><span class=""p"">[</span><span class=""s2"">&quot;attention_mask&quot;</span><span class=""p"">]</span>
@@ -109,7 +109,7 @@ in the dictionary returned by the tokenizer under the key “attention_mask”:<
 </pre></div>
 </div>
 "
-Token Type IDs<a class=""headerlink"" href=""#token-type-ids"" title=""Permalink to this headline"">¶</a>|"
+Token Type IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#token-type-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>Some models’ purpose is to do sequence classification or question answering. These require two different sequences to
 be joined in a single “input_ids” entry, which usually is performed with the help of special tokens, such as the
 classifier (<code class=""docutils literal notranslate""><span class=""pre"">[CLS]</span></code>) and separator (<code class=""docutils literal notranslate""><span class=""pre"">[SEP]</span></code>) tokens. For example, the BERT model builds its two sequence input as
@@ -143,9 +143,9 @@ the two types of sequence in the model.</p>
 </div>
 <p>The first sequence, the “context” used for the question, has all its tokens represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">0</span></code>, whereas the
 second sequence, corresponding to the “question”, has all its tokens represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">1</span></code>.</p>
-<p>Some models, like <a class=""reference internal"" href=""model_doc/xlnet.html#transformers.XLNetModel"" title=""transformers.XLNetModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">XLNetModel</span></code></a> use an additional token represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">2</span></code>.</p>
+<p>Some models, like <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/xlnet.html#transformers.XLNetModel"" title=""transformers.XLNetModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">XLNetModel</span></code></a> use an additional token represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">2</span></code>.</p>
 "
-Position IDs<a class=""headerlink"" href=""#position-ids"" title=""Permalink to this headline"">¶</a>|"
+Position IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#position-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>Contrary to RNNs that have the position of each token embedded within them, transformers are unaware of the position of
 each token. Therefore, the position IDs (<code class=""docutils literal notranslate""><span class=""pre"">position_ids</span></code>) are used by the model to identify each token’s position in
 the list of tokens.</p>
@@ -154,32 +154,32 @@ absolute positional embeddings.</p>
 <p>Absolute positional embeddings are selected in the range <code class=""docutils literal notranslate""><span class=""pre"">[0,</span> <span class=""pre"">config.max_position_embeddings</span> <span class=""pre"">-</span> <span class=""pre"">1]</span></code>. Some models use
 other types of positional embeddings, such as sinusoidal position embeddings or relative position embeddings.</p>
 "
-Labels<a class=""headerlink"" href=""#labels"" title=""Permalink to this headline"">¶</a>|"
+Labels<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#labels"" title=""Permalink to this headline"">¶</a>|"
 <p>The labels are an optional argument which can be passed in order for the model to compute the loss itself. These labels
 should be the expected prediction of the model: it will use the standard loss in order to compute the loss between its
 predictions and the expected value (the label).</p>
 <p>These labels are different according to the model head, for example:</p>
 <ul class=""simple"" align=""left"">
-<li><p>For sequence classification models (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertForSequenceClassification"" title=""transformers.BertForSequenceClassification""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForSequenceClassification</span></code></a>), the model expects a
+<li><p>For sequence classification models (e.g., <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertForSequenceClassification"" title=""transformers.BertForSequenceClassification""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForSequenceClassification</span></code></a>), the model expects a
 tensor of dimension <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">(batch_size)</span></code> with each value of the batch corresponding to the expected label of the
 entire sequence.</p></li>
-<li><p>For token classification models (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertForTokenClassification"" title=""transformers.BertForTokenClassification""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForTokenClassification</span></code></a>), the model expects a tensor
+<li><p>For token classification models (e.g., <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertForTokenClassification"" title=""transformers.BertForTokenClassification""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForTokenClassification</span></code></a>), the model expects a tensor
 of dimension <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">(batch_size,</span> <span class=""pre"">seq_length)</span></code> with each value corresponding to the expected label of each individual
 token.</p></li>
-<li><p>For masked language modeling (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertForMaskedLM"" title=""transformers.BertForMaskedLM""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForMaskedLM</span></code></a>), the model expects a tensor of dimension
+<li><p>For masked language modeling (e.g., <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertForMaskedLM"" title=""transformers.BertForMaskedLM""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForMaskedLM</span></code></a>), the model expects a tensor of dimension
 <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">(batch_size,</span> <span class=""pre"">seq_length)</span></code> with each value corresponding to the expected label of each individual token: the
 labels being the token ID for the masked token, and values to be ignored for the rest (usually -100).</p></li>
-<li><p>For sequence to sequence tasks,(e.g., <a class=""reference internal"" href=""model_doc/bart.html#transformers.BartForConditionalGeneration"" title=""transformers.BartForConditionalGeneration""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BartForConditionalGeneration</span></code></a>,
-<a class=""reference internal"" href=""model_doc/mbart.html#transformers.MBartForConditionalGeneration"" title=""transformers.MBartForConditionalGeneration""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">MBartForConditionalGeneration</span></code></a>), the model expects a tensor of dimension <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">(batch_size,</span>
+<li><p>For sequence to sequence tasks,(e.g., <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bart.html#transformers.BartForConditionalGeneration"" title=""transformers.BartForConditionalGeneration""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BartForConditionalGeneration</span></code></a>,
+<a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/mbart.html#transformers.MBartForConditionalGeneration"" title=""transformers.MBartForConditionalGeneration""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">MBartForConditionalGeneration</span></code></a>), the model expects a tensor of dimension <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">(batch_size,</span>
 <span class=""pre"">tgt_seq_length)</span></code> with each value corresponding to the target sequences associated with each input sequence. During
 training, both <cite>BART</cite> and <cite>T5</cite> will make the appropriate <cite>decoder_input_ids</cite> and decoder attention masks internally.
 They usually do not need to be supplied. This does not apply to models leveraging the Encoder-Decoder framework. See
 the documentation of each model for more information on each specific model’s labels.</p></li>
 </ul>
-<p>The base models (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a>) do not accept labels, as these are the base transformer
+<p>The base models (e.g., <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a>) do not accept labels, as these are the base transformer
 models, simply outputting features.</p>
 "
-Decoder input IDs<a class=""headerlink"" href=""#decoder-input-ids"" title=""Permalink to this headline"">¶</a>|"
+Decoder input IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#decoder-input-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>This input is specific to encoder-decoder models, and contains the input IDs that will be fed to the decoder. These
 inputs should be used for sequence to sequence tasks, such as translation or summarization, and are usually built in a
 way specific to each model.</p>
@@ -187,7 +187,7 @@ way specific to each model.</p>
 such models, passing the <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">labels</span></code> is the preferred way to handle training.</p>
 <p>Please check each model’s docs to see how they handle these input IDs for sequence to sequence training.</p>
 "
-Feed Forward Chunking<a class=""headerlink"" href=""#feed-forward-chunking"" title=""Permalink to this headline"">¶</a>|"
+Feed Forward Chunking<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#feed-forward-chunking"" title=""Permalink to this headline"">¶</a>|"
 <p>In each residual attention block in transformers the self-attention layer is usually followed by 2 feed forward layers.
 The intermediate embedding size of the feed forward layers is often bigger than the hidden size of the model (e.g., for
 <code class=""docutils literal notranslate""><span class=""pre"">bert-base-uncased</span></code>).</p>
@@ -199,7 +199,7 @@ embeddings of both feed forward layers <code class=""docutils literal notranslat
 individually and concat them afterward to <code class=""docutils literal notranslate""><span class=""pre"">[batch_size,</span> <span class=""pre"">sequence_length,</span> <span class=""pre"">config.hidden_size]</span></code> with <code class=""docutils literal notranslate""><span class=""pre"">n</span> <span class=""pre"">=</span>
 <span class=""pre"">sequence_length</span></code>, which trades increased computation time against reduced memory use, but yields a mathematically
 <strong>equivalent</strong> result.</p>
-<p>For models employing the function <a class=""reference internal"" href=""internal/modeling_utils.html#transformers.apply_chunking_to_forward"" title=""transformers.apply_chunking_to_forward""><code class=""xref py py-func docutils literal notranslate""><span class=""pre"">apply_chunking_to_forward()</span></code></a>, the <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> defines the
+<p>For models employing the function <a class=""reference internal"" href=""https://huggingface.co/transformers/internal/modeling_utils.html#transformers.apply_chunking_to_forward"" title=""transformers.apply_chunking_to_forward""><code class=""xref py py-func docutils literal notranslate""><span class=""pre"">apply_chunking_to_forward()</span></code></a>, the <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> defines the
 number of output embeddings that are computed in parallel and thus defines the trade-off between memory and time
 complexity. If <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> is set to 0, no feed forward chunking is done.</p>
 "
