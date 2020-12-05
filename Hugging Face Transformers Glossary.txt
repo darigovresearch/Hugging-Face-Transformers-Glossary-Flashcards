@@ -178,7 +178,7 @@ the documentation of each model for more information on each specific model’s 
 </ul>
 <p>The base models (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a>) do not accept labels, as these are the base transformer
 models, simply outputting features.</p>
-"<
+"
 Decoder input IDs<a class=""headerlink"" href=""#decoder-input-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>This input is specific to encoder-decoder models, and contains the input IDs that will be fed to the decoder. These
 inputs should be used for sequence to sequence tasks, such as translation or summarization, and are usually built in a
