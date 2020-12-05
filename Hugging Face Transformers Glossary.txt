@@ -19,12 +19,10 @@ seq2seq or sequence-to-sequence|"models that generate a new sequence from an inp
 summarization models (such as <a class=""reference internal"" href=""model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""model_doc/t5.html""><span class=""doc"">T5</span></a>)."
 token|"a part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
 or a punctuation symbol."
-<div class=""section"" id=""model-inputs"">
-<h2>Model inputs<a class=""headerlink"" href=""#model-inputs"" title=""Permalink to this headline"">¶</a></h2>
+Model inputs<a class=""headerlink"" href=""#model-inputs"" title=""Permalink to this headline"">¶</a>|"
 <p>Every model is different yet bears similarities with the others. Therefore most models use the same inputs, which are
-detailed here alongside usage examples.</p>
-<div class=""section"" id=""input-ids"">
-<span id=""id1""></span><h3>Input IDs<a class=""headerlink"" href=""#input-ids"" title=""Permalink to this headline"">¶</a></h3>
+detailed here alongside usage examples."
+Input IDs<a class=""headerlink"" href=""#input-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>The input ids are often the only required parameters to be passed to the model as input. <em>They are token indices,
 numerical representations of tokens building the sequences that will be used as input by the model</em>.</p>
 <p>Each tokenizer works differently but the underlying mechanism remains the same. Here’s an example using the BERT
@@ -70,9 +68,8 @@ IDs the model sometimes uses.</p>
 </pre></div>
 </div>
 <p>because this is the way a <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a> is going to expect its inputs.</p>
-</div>
-<div class=""section"" id=""attention-mask"">
-<span id=""id2""></span><h3>Attention mask<a class=""headerlink"" href=""#attention-mask"" title=""Permalink to this headline"">¶</a></h3>
+"
+Attention mask<a class=""headerlink"" href=""#attention-mask"" title=""Permalink to this headline"">¶</a>|"
 <p>The attention mask is an optional argument used when batching sequences together. This argument indicates to the model
 which tokens should be attended to, and which should not.</p>
 <p>For example, consider these two sequences:</p>
@@ -111,9 +108,8 @@ in the dictionary returned by the tokenizer under the key “attention_mask”:<
 <span class=""go"">[[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]</span>
 </pre></div>
 </div>
-</div>
-<div class=""section"" id=""token-type-ids"">
-<span id=""id3""></span><h3>Token Type IDs<a class=""headerlink"" href=""#token-type-ids"" title=""Permalink to this headline"">¶</a></h3>
+"
+Token Type IDs<a class=""headerlink"" href=""#token-type-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>Some models’ purpose is to do sequence classification or question answering. These require two different sequences to
 be joined in a single “input_ids” entry, which usually is performed with the help of special tokens, such as the
 classifier (<code class=""docutils literal notranslate""><span class=""pre"">[CLS]</span></code>) and separator (<code class=""docutils literal notranslate""><span class=""pre"">[SEP]</span></code>) tokens. For example, the BERT model builds its two sequence input as
@@ -148,9 +144,8 @@ the two types of sequence in the model.</p>
 <p>The first sequence, the “context” used for the question, has all its tokens represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">0</span></code>, whereas the
 second sequence, corresponding to the “question”, has all its tokens represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">1</span></code>.</p>
 <p>Some models, like <a class=""reference internal"" href=""model_doc/xlnet.html#transformers.XLNetModel"" title=""transformers.XLNetModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">XLNetModel</span></code></a> use an additional token represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">2</span></code>.</p>
-</div>
-<div class=""section"" id=""position-ids"">
-<span id=""id4""></span><h3>Position IDs<a class=""headerlink"" href=""#position-ids"" title=""Permalink to this headline"">¶</a></h3>
+"
+Position IDs<a class=""headerlink"" href=""#position-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>Contrary to RNNs that have the position of each token embedded within them, transformers are unaware of the position of
 each token. Therefore, the position IDs (<code class=""docutils literal notranslate""><span class=""pre"">position_ids</span></code>) are used by the model to identify each token’s position in
 the list of tokens.</p>
@@ -158,9 +153,8 @@ the list of tokens.</p>
 absolute positional embeddings.</p>
 <p>Absolute positional embeddings are selected in the range <code class=""docutils literal notranslate""><span class=""pre"">[0,</span> <span class=""pre"">config.max_position_embeddings</span> <span class=""pre"">-</span> <span class=""pre"">1]</span></code>. Some models use
 other types of positional embeddings, such as sinusoidal position embeddings or relative position embeddings.</p>
-</div>
-<div class=""section"" id=""labels"">
-<span id=""id5""></span><h3>Labels<a class=""headerlink"" href=""#labels"" title=""Permalink to this headline"">¶</a></h3>
+"
+Labels<a class=""headerlink"" href=""#labels"" title=""Permalink to this headline"">¶</a>|"
 <p>The labels are an optional argument which can be passed in order for the model to compute the loss itself. These labels
 should be the expected prediction of the model: it will use the standard loss in order to compute the loss between its
 predictions and the expected value (the label).</p>
@@ -184,18 +178,16 @@ the documentation of each model for more information on each specific model’s 
 </ul>
 <p>The base models (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a>) do not accept labels, as these are the base transformer
 models, simply outputting features.</p>
-</div>
-<div class=""section"" id=""decoder-input-ids"">
-<span id=""id6""></span><h3>Decoder input IDs<a class=""headerlink"" href=""#decoder-input-ids"" title=""Permalink to this headline"">¶</a></h3>
+"
+Decoder input IDs<a class=""headerlink"" href=""#decoder-input-ids"" title=""Permalink to this headline"">¶</a>|"
 <p>This input is specific to encoder-decoder models, and contains the input IDs that will be fed to the decoder. These
 inputs should be used for sequence to sequence tasks, such as translation or summarization, and are usually built in a
 way specific to each model.</p>
 <p>Most encoder-decoder models (BART, T5) create their <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">decoder_input_ids</span></code> on their own from the <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">labels</span></code>. In
 such models, passing the <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">labels</span></code> is the preferred way to handle training.</p>
 <p>Please check each model’s docs to see how they handle these input IDs for sequence to sequence training.</p>
-</div>
-<div class=""section"" id=""feed-forward-chunking"">
-<span id=""id7""></span><h3>Feed Forward Chunking<a class=""headerlink"" href=""#feed-forward-chunking"" title=""Permalink to this headline"">¶</a></h3>
+"
+Feed Forward Chunking<a class=""headerlink"" href=""#feed-forward-chunking"" title=""Permalink to this headline"">¶</a>|"
 <p>In each residual attention block in transformers the self-attention layer is usually followed by 2 feed forward layers.
 The intermediate embedding size of the feed forward layers is often bigger than the hidden size of the model (e.g., for
 <code class=""docutils literal notranslate""><span class=""pre"">bert-base-uncased</span></code>).</p>
@@ -210,5 +202,4 @@ individually and concat them afterward to <code class=""docutils literal notrans
 <p>For models employing the function <a class=""reference internal"" href=""internal/modeling_utils.html#transformers.apply_chunking_to_forward"" title=""transformers.apply_chunking_to_forward""><code class=""xref py py-func docutils literal notranslate""><span class=""pre"">apply_chunking_to_forward()</span></code></a>, the <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> defines the
 number of output embeddings that are computed in parallel and thus defines the trade-off between memory and time
 complexity. If <code class=""docutils literal notranslate""><span class=""pre"">chunk_size</span></code> is set to 0, no feed forward chunking is done.</p>
-</div>
-</div>
+"
