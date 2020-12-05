@@ -1,3 +1,19 @@
+"Introduction (Hugging Face Transformers Glossary)"|"
+<p>This deck has taken definitions outlined in <a href=""https://huggingface.co/transformers/glossary.html"">Hugging Face's Transformers Glossary</a> and put them into a form which can be easily learnt/revised using <a href=""https://apps.ankiweb.net/"">Anki</a> a cross platform app specifically designed for long term knowledge retention.</p>
+<h2>Notes</h2>
+<p>Please note the modifications which have been made &amp; where you can find updates.</p>
+<ol align=""left"">
+<li>The front of every card has ""(Hugging Face Transformers Glossary)"" appended to the end so that if you have any other words in your collection, the Hugging Face's Glossary definition will still be added when importing it.</li>
+<li>The original relative URLs have been made into full URLs so they are clickable within Anki.</li>
+<li>Unordered lists have been aligned to the left to make them easier to read in Anki which automatically centers content.</li>
+<li>Any updates, translations or corrections to the deck will be available at <a href=""https://github.com/darigovresearch/Hugging-Face-Transformers-Glossary-Flashcards"">https://github.com/darigovresearch/Hugging-Face-Transformers-Glossary-Flashcards</a> so do return periodically to check if you have the latest version.</li>
+</ol>
+<p>Feel free to share the deck and give the repository a star so more people are likely to see this work and can get the most out of it.</p>
+<h2>License</h2>
+<p>Unless otherwise specified, everything in this deck is covered by the following licence:</p>
+<p>This work was based on the <em><strong>Hugging Face's Transformers Glossary</strong></em> by <a href=""https://huggingface.co/transformers/glossary.html"">Hugging Face</a>. Content is available under an <a href=""https://github.com/huggingface/transformers/blob/master/LICENSE"">Apache 2.0 license</a>.</p>
+<p>To see this work in full go to <a href=""https://huggingface.co/transformers/glossary.html"">https://huggingface.co/transformers/glossary.html</a></p>
+"
 "Autoencoding models (Hugging Face Transformers Glossary)"|"See MLM"
 "Autoregressive models (Hugging Face Transformers Glossary)"|"See CLM"
 "CLM (Hugging Face Transformers Glossary)"|"Causal language modeling, a pretraining task where the model reads the texts in order and has to predict the
