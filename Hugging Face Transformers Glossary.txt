@@ -159,7 +159,7 @@ Labels<a class=""headerlink"" href=""#labels"" title=""Permalink to this headlin
 should be the expected prediction of the model: it will use the standard loss in order to compute the loss between its
 predictions and the expected value (the label).</p>
 <p>These labels are different according to the model head, for example:</p>
-<ul class=""simple"">
+<ul class=""simple"" align=""left"">
 <li><p>For sequence classification models (e.g., <a class=""reference internal"" href=""model_doc/bert.html#transformers.BertForSequenceClassification"" title=""transformers.BertForSequenceClassification""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertForSequenceClassification</span></code></a>), the model expects a
 tensor of dimension <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">(batch_size)</span></code> with each value of the batch corresponding to the expected label of the
 entire sequence.</p></li>
