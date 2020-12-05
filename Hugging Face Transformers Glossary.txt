@@ -1,28 +1,28 @@
-Autoencoding models|"See MLM"
-Autoregressive models|"See CLM"
-CLM|"Causal language modeling, a pretraining task where the model reads the texts in order and has to predict the
+"Autoencoding models"|"See MLM"
+"Autoregressive models"|"See CLM"
+"CLM"|"Causal language modeling, a pretraining task where the model reads the texts in order and has to predict the
 next word. It’s usually done by reading the whole sentence but using a mask inside the model to hide the future
 tokens at a certain timestep."
-MLM|"Masked language modeling, a pretraining task where the model sees a corrupted version of the texts, usually done
+"MLM"|"Masked language modeling, a pretraining task where the model sees a corrupted version of the texts, usually done
 by masking some tokens randomly, and has to predict the original text."
-Multimodal|"A task that combines texts with another kind of inputs (for instance images)."
-NLG|"Natural language generation, all tasks related to generating text ( for instance talk with transformers,
+"Multimodal"|"A task that combines texts with another kind of inputs (for instance images)."
+"NLG"|"Natural language generation, all tasks related to generating text ( for instance talk with transformers,
 translation)"
-NLP|"Natural language processing, a generic way to say “deal with texts”."
-NLU|"Natural language understanding, all tasks related to understanding what is in a text (for instance classifying
+"NLP"|"Natural language processing, a generic way to say “deal with texts”."
+"NLU"|"Natural language understanding, all tasks related to understanding what is in a text (for instance classifying
 the whole text, individual words)"
-Pretrained model|"A model that has been pretrained on some data (for instance all of Wikipedia). Pretraining methods
+"Pretrained model"|"A model that has been pretrained on some data (for instance all of Wikipedia). Pretraining methods
 involve a self-supervised objective, which can be reading the text and trying to predict the next word (see CLM) or
 masking some words and trying to predict them (see MLM)."
-RNN|"Recurrent neural network, a type of model that uses a loop over a layer to process texts."
-seq2seq or sequence-to-sequence|"Models that generate a new sequence from an input, like translation models, or
+"RNN"|"Recurrent neural network, a type of model that uses a loop over a layer to process texts."
+"seq2seq or sequence-to-sequence"|"Models that generate a new sequence from an input, like translation models, or
 summarization models (such as <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/t5.html""><span class=""doc"">T5</span></a>)."
-Token|"A part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
+"Token"|"A part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
 or a punctuation symbol."
-Model inputs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#model-inputs"" title=""Permalink to this headline"">¶</a>|"
+"Model inputs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#model-inputs"" title=""Permalink to this headline"">¶</a>"|"
 <p>Every model is different yet bears similarities with the others. Therefore most models use the same inputs, which are
 detailed here alongside usage examples."
-Input IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#input-ids"" title=""Permalink to this headline"">¶</a>|"
+"Input IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#input-ids"" title=""Permalink to this headline"">¶</a>"|"
 <p>The input ids are often the only required parameters to be passed to the model as input. <em>They are token indices,
 numerical representations of tokens building the sequences that will be used as input by the model</em>.</p>
 <p>Each tokenizer works differently but the underlying mechanism remains the same. Here’s an example using the BERT
@@ -69,7 +69,7 @@ IDs the model sometimes uses.</p>
 </div>
 <p>because this is the way a <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a> is going to expect its inputs.</p>
 "
-Attention mask<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#attention-mask"" title=""Permalink to this headline"">¶</a>|"
+"Attention mask<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#attention-mask"" title=""Permalink to this headline"">¶</a>"|"
 <p>The attention mask is an optional argument used when batching sequences together. This argument indicates to the model
 which tokens should be attended to, and which should not.</p>
 <p>For example, consider these two sequences:</p>
@@ -109,7 +109,7 @@ in the dictionary returned by the tokenizer under the key “attention_mask”:<
 </pre></div>
 </div>
 "
-Token Type IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#token-type-ids"" title=""Permalink to this headline"">¶</a>|"
+"Token Type IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#token-type-ids"" title=""Permalink to this headline"">¶</a>"|"
 <p>Some models’ purpose is to do sequence classification or question answering. These require two different sequences to
 be joined in a single “input_ids” entry, which usually is performed with the help of special tokens, such as the
 classifier (<code class=""docutils literal notranslate""><span class=""pre"">[CLS]</span></code>) and separator (<code class=""docutils literal notranslate""><span class=""pre"">[SEP]</span></code>) tokens. For example, the BERT model builds its two sequence input as
@@ -145,7 +145,7 @@ the two types of sequence in the model.</p>
 second sequence, corresponding to the “question”, has all its tokens represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">1</span></code>.</p>
 <p>Some models, like <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/xlnet.html#transformers.XLNetModel"" title=""transformers.XLNetModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">XLNetModel</span></code></a> use an additional token represented by a <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">2</span></code>.</p>
 "
-Position IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#position-ids"" title=""Permalink to this headline"">¶</a>|"
+"Position IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#position-ids"" title=""Permalink to this headline"">¶</a>"|"
 <p>Contrary to RNNs that have the position of each token embedded within them, transformers are unaware of the position of
 each token. Therefore, the position IDs (<code class=""docutils literal notranslate""><span class=""pre"">position_ids</span></code>) are used by the model to identify each token’s position in
 the list of tokens.</p>
@@ -154,7 +154,7 @@ absolute positional embeddings.</p>
 <p>Absolute positional embeddings are selected in the range <code class=""docutils literal notranslate""><span class=""pre"">[0,</span> <span class=""pre"">config.max_position_embeddings</span> <span class=""pre"">-</span> <span class=""pre"">1]</span></code>. Some models use
 other types of positional embeddings, such as sinusoidal position embeddings or relative position embeddings.</p>
 "
-Labels<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#labels"" title=""Permalink to this headline"">¶</a>|"
+"Labels<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#labels"" title=""Permalink to this headline"">¶</a>"|"
 <p>The labels are an optional argument which can be passed in order for the model to compute the loss itself. These labels
 should be the expected prediction of the model: it will use the standard loss in order to compute the loss between its
 predictions and the expected value (the label).</p>
@@ -179,7 +179,7 @@ the documentation of each model for more information on each specific model’s 
 <p>The base models (e.g., <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bert.html#transformers.BertModel"" title=""transformers.BertModel""><code class=""xref py py-class docutils literal notranslate""><span class=""pre"">BertModel</span></code></a>) do not accept labels, as these are the base transformer
 models, simply outputting features.</p>
 "
-Decoder input IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#decoder-input-ids"" title=""Permalink to this headline"">¶</a>|"
+"Decoder input IDs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#decoder-input-ids"" title=""Permalink to this headline"">¶</a>"|"
 <p>This input is specific to encoder-decoder models, and contains the input IDs that will be fed to the decoder. These
 inputs should be used for sequence to sequence tasks, such as translation or summarization, and are usually built in a
 way specific to each model.</p>
@@ -187,7 +187,7 @@ way specific to each model.</p>
 such models, passing the <code class=""xref py py-obj docutils literal notranslate""><span class=""pre"">labels</span></code> is the preferred way to handle training.</p>
 <p>Please check each model’s docs to see how they handle these input IDs for sequence to sequence training.</p>
 "
-Feed Forward Chunking<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#feed-forward-chunking"" title=""Permalink to this headline"">¶</a>|"
+"Feed Forward Chunking<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#feed-forward-chunking"" title=""Permalink to this headline"">¶</a>"|"
 <p>In each residual attention block in transformers the self-attention layer is usually followed by 2 feed forward layers.
 The intermediate embedding size of the feed forward layers is often bigger than the hidden size of the model (e.g., for
 <code class=""docutils literal notranslate""><span class=""pre"">bert-base-uncased</span></code>).</p>
