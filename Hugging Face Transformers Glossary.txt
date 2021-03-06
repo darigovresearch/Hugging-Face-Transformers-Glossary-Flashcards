@@ -19,6 +19,7 @@
 "CLM (Hugging Face Transformers Glossary)"|"Causal language modeling, a pretraining task where the model reads the texts in order and has to predict the
 next word. It’s usually done by reading the whole sentence but using a mask inside the model to hide the future
 tokens at a certain timestep."
+"Deep learning (Hugging Face Transformers Glossary)"|"Machine learning algorithms which uses neural networks with several layers."
 "MLM (Hugging Face Transformers Glossary)"|"Masked language modeling, a pretraining task where the model sees a corrupted version of the texts, usually done
 by masking some tokens randomly, and has to predict the original text."
 "Multimodal (Hugging Face Transformers Glossary)"|"A task that combines texts with another kind of inputs (for instance images)."
@@ -31,10 +32,12 @@ the whole text, individual words)"
 involve a self-supervised objective, which can be reading the text and trying to predict the next word (see CLM) or
 masking some words and trying to predict them (see MLM)."
 "RNN (Hugging Face Transformers Glossary)"|"Recurrent neural network, a type of model that uses a loop over a layer to process texts."
+"Self-attention (Hugging Face Transformers Glossary)"|"Each element of the input finds out which other elements of the input they should attend to."
 "seq2seq or sequence-to-sequence (Hugging Face Transformers Glossary)"|"Models that generate a new sequence from an input, like translation models, or
 summarization models (such as <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/bart.html""><span class=""doc"">Bart</span></a> or <a class=""reference internal"" href=""https://huggingface.co/transformers/model_doc/t5.html""><span class=""doc"">T5</span></a>)."
 "Token (Hugging Face Transformers Glossary)"|"A part of a sentence, usually a word, but can also be a subword (non-common words are often split in subwords)
 or a punctuation symbol."
+"Transformer (Hugging Face Transformers Glossary)"|"Self-attention based deep learning model architecture."
 "Model inputs<a class=""headerlink"" href=""https://huggingface.co/transformers/glossary.html#model-inputs"" title=""Permalink to this headline"">¶</a> (Hugging Face Transformers Glossary)"|"
 <p>Every model is different yet bears similarities with the others. Therefore most models use the same inputs, which are
 detailed here alongside usage examples."
